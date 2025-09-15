@@ -1,24 +1,8 @@
-# ROLLER
-
-[![CI][ci-shd]][ci-url]
-[![LC][lc-shd]][lc-url]
+# ROLLER-matching
 
 ![Roller logo](./images/whiplash.gif)
 
-This project aims to implement all the functionality of the 1995 game Whiplash/Fatal Racing in a way that builds and runs on modern PCs. Where necessary, DOS-specific functions are substituted with SDL and Windows/Unix equivalents.
-
-[![On track!](https://img.youtube.com/vi/xjQ-uQNEEpM/maxresdefault.jpg)](https://www.youtube.com/watch?v=xjQ-uQNEEpM)
-
-## Installation
-Assets from a retail copy of the game are required to run. Drop the contents of the build directory (bin or zig-out) into the Whiplash/Fatal Racing install directory. ROLLER.exe should be in the same directory as WHIP.EXE/FATAL.EXE.
-
-## TODO
-* Integrate sound panning with SDL
-* Find instrument/sample set for WildMidi that sounds closer to original hardware
-* Bug: pits in devil's hairpin do not show doubled texture
-* Linux only: replay positioning is chunky
-* Implement CD audio
-* Implement modern networking
+This project aims to build an instruction-matching version of FATAL.EXE using Open Watcom for MSDOS. For a portable version that runs on modern systems see https://github.com/FatalDecomp/ROLLER
 
 ## About
 
@@ -39,64 +23,3 @@ FATAL.EXE
 FATAL.EXE_split_dos4g_payload.exe
 * `md5: 05C2B0730641663133D76DD2CA552B4C`
 * `SHA256: A4AD4131DBBFF9884DA4687D8B579B81117E6D23525950D942DF2DF585E2A11E`
-
-## External Dependencies Used:
-* SDL3.2.14: https://github.com/libsdl-org/SDL
-* SDL_Image3.2.4: https://github.com/libsdl-org/SDL_image
-* WildMIDI 0.4.6: https://github.com/Mindwerks/wildmidi
-
-## Build MSVC
-1. Clone repository
-2. Open ROLLER.sln
-3. Build project
-
-## Build GCC
-```bash
-git clone https://github.com/zizin13/roller.git
-cd roller
-make
-```
-
-### Prerequisites
-* SDL3
-* SDL3_Image
-* WildMIDI
-
-## Build Zig
-
-### Clone the repository
-
-```bash
-git clone https://github.com/zizin13/roller.git
-cd roller
-```
-
-### Install prerequisites
-
-- [Zig 0.14.1](https://ziglang.org/download/)
-
-The easiest way to install is to use [mise](https://mise.jdx.dev/):
-
-```bash
-mise install
-```
-### Build and run the project
-
-Using default settings
-```bash
-zig build run
-```
-
-A custom data folder
-```bash
-zig build -Dassets-path=/path/to/fatdata run
-```
-
-### Windows development
-
-There is basic support for Visual Studio 2022 using [ZigVS](https://marketplace.visualstudio.com/items?itemName=LuckystarStudio.ZigVS)
-
-[ci-shd]: https://img.shields.io/github/actions/workflow/status/FatalDecomp/ROLLER/ci.yml?branch=master&style=for-the-badge&logo=github&label=CI&labelColor=black
-[ci-url]: https://github.com/FatalDecomp/ROLLER/blob/master/.github/workflows/ci.yml
-[lc-shd]: https://img.shields.io/github/license/FatalDecomp/ROLLER.svg?style=for-the-badge&labelColor=black
-[lc-url]: https://github.com/FatalDecomp/ROLLER/blob/master/LICENSE.md
